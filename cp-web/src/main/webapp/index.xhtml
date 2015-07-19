@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>SCP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/tema.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <br/><br/>
+            <p:panel header="Ingresa a mi Folder" style="font-size: 12px;text-align: center;" >
+                <center>
+                    <p:panelGrid  columns="1">
+                        <p:outputLabel style="font-size: 12px;" value="Nombre Usuario:" />
+                        <p:inputText size="70" />
+                        <p:outputLabel style="font-size: 12px;" value="Contraseña:" />
+                        <p:password size="70"  />
+                    </p:panelGrid>                
+                </center>	
+                <br/>				
+                <h:button outcome="panelControl"  value="Ingresar" style="font-size: 12px;" />    
+            </p:panel> 
+        </h:form>
+    </h:body>
+</html>
