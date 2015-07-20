@@ -18,18 +18,20 @@ and open the template in the editor.
     <h:body>
         <h:form>
             <br/><br/>
-            <p:panel header="Ingresa a mi Folder" style="font-size: 12px;text-align: center;" >
+            <p:panel header="Ingresa a mi Folder" styleClass="header" >
                 <center>
-                    <p:panelGrid  columns="1">
-                        <p:outputLabel style="font-size: 12px;" value="Nombre Usuario:" />
+                    <p:panelGrid styleClass="label"  columns="1">
+                        <p:outputLabel value="Nombre Usuario:" />
                         <p:inputText size="70" />
-                        <p:outputLabel style="font-size: 12px;" value="Contraseña:" />
+                        <p:outputLabel value="Contraseña:" />
                         <p:password size="70"  />
                     </p:panelGrid>                
                 </center>	
-                <br/>				
-                <h:button outcome="panelControl"  value="Ingresar" style="font-size: 12px;" />
-                <h:button outcome="panelControl"  value="Registrarse" style="font-size: 12px;" />
+                <br/>	
+                <center>
+                    <h:button outcome="panelControl"  value="Ingresar" styleClass="label-button" />
+                    <h:button outcome="panelControl"  value="Registrarse" styleClass="label-button" />
+                </center>
             </p:panel>
         </h:form>
     </h:body>

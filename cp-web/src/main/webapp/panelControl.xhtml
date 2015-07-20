@@ -11,6 +11,7 @@
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <title>SCP</title>
             </f:facet>
+            <link rel="stylesheet" href="css/tema.css"/>
         </h:head>
 
         <h:body>
@@ -27,8 +28,8 @@
                     </center>
                 </p:layoutUnit>
 
-                <p:layoutUnit position="west" size="205" header="Menú Principal" collapsible="true">
-                    <p:menu>
+                <p:layoutUnit position="west" size="205" header="Menú Principal" collapsible="true" styleClass="header">
+                    <p:menu styleClass="item-menu">
                             <p:menuitem value="Bandeja de Entrada" outcome="correoUsuario" />
                             <p:menuitem value="Carpeta Ciudadana" outcome="carpetaPersonal"/>
                             <p:menuitem value="Trámites" url="#" />                            
