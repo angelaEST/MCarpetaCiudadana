@@ -34,6 +34,8 @@ public class CarpetaManagedBean {
     private MailDto mail;
 
     private TreeNode mailbox;
+    
+    public List<ArchivoDto> selectedFiles;
 
     /**
      * Creates a new instance of CarpetaManagedBean
@@ -121,4 +123,14 @@ public class CarpetaManagedBean {
     public void send() {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mail Sent!"));
     }
+
+    public List<ArchivoDto> getSelectedFiles() {
+        return selectedFiles;
+    }
+
+    public void setSelectedFiles(List<ArchivoDto> selectedFiles) {
+        this.selectedFiles = selectedFiles;
+    }
+    
+                
 }

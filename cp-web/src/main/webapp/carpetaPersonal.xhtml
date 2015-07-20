@@ -9,11 +9,10 @@
         <ui:define name="body">
             <h:form>
                 <p:growl id="messages" showDetail="false" showSummary="false"/>
-                <p:panel header="Mi Carpeta">
+                <p:panel header="Mi Carpeta" styleClass="header">
                     <p:toolbar>
                         <f:facet name="left">
                             <p:commandButton type="button" value="Agregar" icon="ui-icon-plus" onclick="PF('idAgregarDlg').show()"/>
-                            <p:commandButton type="button" value="Abrir" icon="ui-icon-folder-open" />
                             <span class="ui-separator">
                                 <span class="ui-icon ui-icon-grip-dotted-vertical" />
                             </span>
@@ -21,20 +20,21 @@
                         </f:facet>
                         <f:facet name="right">
                             <p:menuButton value="Opciones">
-                                <p:menuitem value="información Carpeta"  icon="ui-icon-notice" onclick="PF('idInfoCarpetaDlg').show()"/>
-                                <p:menuitem value="Actualizar"  icon="ui-icon-arrowrefresh-1-w" ajax="true" />
-                                <p:menuitem value="Compartir" icon="ui-icon-person" />
+                                <p:menuitem styleClass="item-menu" value="información Carpeta"  icon="ui-icon-notice" onclick="PF('idInfoCarpetaDlg').show()"/>
+                                <p:menuitem styleClass="item-menu" value="Actualizar"  icon="ui-icon-arrowrefresh-1-w" ajax="true" />
+                                <p:menuitem styleClass="item-menu" value="Compartir" icon="ui-icon-person" />
                             </p:menuButton>
                         </f:facet>
                     </p:toolbar>
-                    <p:dataTable id="tablaArchivos" value="#{carpetaManagedBean.valor}" var="archivo" > 
+                    <p:dataTable id="tablaArchivos" value="#{carpetaManagedBean.valor}" var="archivo" selection="#{carpetaManagedBean.selectedFiles}" rowKey="#{archivo.id}"> 
+                        <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
                         <p:column style="width:16px;text-align:center">
                             <h:outputText  styleClass=" ui-corner-all ui-icon #{archivo.icono}" />                            
                         </p:column> 
                         <p:column headerText="Nombre">
-                            <p:outputLabel value="#{archivo.nombreArchivo}" />
+                            <p:commandLink value="#{archivo.nombreArchivo}" />
                         </p:column>
-                        <p:column headerText="Fecha actualización">
+                        <p:column headerText="Fecha actualización" style="width:80px;text-align:center">
                             <p:outputLabel value="#{archivo.fechaActualizacion}" >
                                 <f:convertDateTime pattern="dd/MM/yyyy"/>
                             </p:outputLabel>
@@ -42,19 +42,19 @@
                         <p:column headerText="Ver" style="width:40px;text-align:center">
                             <p:commandButton icon="ui-icon-circle-zoomin" />
                         </p:column>
-                        <p:column headerText="Acciones" width="15%">
-                            <p:menuButton value="Acción">
-                                <p:menuitem  value="Mover"/>
-                                <p:menuitem  value="Eliminar"/>
-                                <p:menuitem  value="Compartir"/>
+                        <p:column headerText="Acciones" style="width:80px;text-align:center">
+                            <p:menuButton value="Acción"  style="width:80px;text-align:center">
+                                <p:menuitem styleClass="item-menu" value="Mover"/>
+                                <p:menuitem styleClass="item-menu" value="Eliminar"/>
+                                <p:menuitem styleClass="item-menu" value="Compartir"/>
                             </p:menuButton>
                         </p:column>
                     </p:dataTable>
                 </p:panel> 
                 
                 <p:dialog widgetVar="idInfoCarpetaDlg">
-                    <p:panel header="Información Carpeta">
-                        <p:panelGrid columns="2">
+                    <p:panel header="Información Carpeta" styleClass="header">
+                        <p:panelGrid columns="2" styleClass="label">
                             <p:outputLabel value="Nombre Carpeta:"/> <p:outputLabel value="Documentos Personales"/>
                             <p:outputLabel value="Fecha Actualización:"/> <p:outputLabel value="20/08/2015"/>
                             <p:outputLabel value="Total Archivos:"/> <p:outputLabel value="2"/>
@@ -65,9 +65,9 @@
                     </p:panel>
                 </p:dialog>
                 
-                <p:dialog widgetVar="idAgregarDlg">
-                    <p:panel header="Subir un archivo" >
-                        <p:outputLabel value="Seleccione un Archivo para subir" />
+                <p:dialog widgetVar="idAgregarDlg" resizable="false" draggable="false" closeOnEscape="true">
+                    <p:panel header="Subir un archivo" styleClass="header" >
+                        <p:outputLabel value="Seleccione un Archivo para subir" styleClass="label" />
                             <br/>
                             <p:fileUpload cancelLabel="Cancelar" uploadLabel="Subir" label="Examinar"/>
                     </p:panel>

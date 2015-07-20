@@ -8,6 +8,7 @@ import java.util.Date;
  */
 public class ArchivoDto {
 
+    private int id;
     private String tipoArchivo;
     private String nombreArchivo;
     private Date fechaActualizacion;
@@ -48,4 +49,13 @@ public class ArchivoDto {
         this.icono = icono;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
 }
