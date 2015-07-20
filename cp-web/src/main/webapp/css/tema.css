@@ -51,6 +51,16 @@ conten-button{
     background: #D2D2D2 !important;
 }
 
+/*
+.ui-panelgrid{
+    width: 100% !important;
+}
+
+.menu-lateral>tr,.menu-lateral>td,.ui-panelgrid-cell,.ui-panel-content,.ui-tree-container{
+    width: 100% !important;
+    padding: 0 !important;      
+}
+
 /* CSS - Cascading Style Sheet */
 /* Palette color codes */
 /* Palette URL: http://paletton.com/#uid=13i0u0klNmvbIxfhbrbqli0vDcw */
