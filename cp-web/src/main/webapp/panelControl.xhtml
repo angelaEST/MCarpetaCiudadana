@@ -32,7 +32,7 @@
                     <p:menu styleClass="item-menu">
                             <p:menuitem value="Bandeja de Entrada" outcome="correoUsuario" />
                             <p:menuitem value="Carpeta Ciudadana" outcome="carpetaPersonal"/>
-                            <p:menuitem value="Trámites" url="#" />                            
+                            <p:menuitem value="Trámites" outcome="tramite" />                            
                             <p:menuitem value="Configuración de Cuenta" outcome="configUsuario" />
                             <p:menuitem value="Publicidad" url="#" />
                             <p:menuitem value="Migración y Baja de Usuario" outcome="MigracionBajaUsuario" />
@@ -46,6 +46,8 @@
             </p:layout>
 
         </h:body>
+        
+        <ui:insert name="dialogs"></ui:insert>
 
     </f:view>
 </html>

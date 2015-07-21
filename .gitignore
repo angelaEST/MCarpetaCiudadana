@@ -1,1 +1,11 @@
 /cp-web/target/
+*.class
+cp-ejb/target/cp-ejb-1.0.jar
+*.lst
+*.lst
+*.lst
+*.lst
+*.lst
+*.jar
+*.netbeans_automatic_build
+*.jar
